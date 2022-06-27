@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ahimsha": "^1.0.0",
     "mongoose": "^6.4.0",
-    "underscore": "^1.13.4"
+    "underscore": "^1.4.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.13.4"
   }
 }
