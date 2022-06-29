@@ -1,0 +1,7 @@
+{
+    "name": " app - env variables",
+    "mail": {
+        "host": "env-mail-server",
+        "password": "express_password"
+    }
+}
