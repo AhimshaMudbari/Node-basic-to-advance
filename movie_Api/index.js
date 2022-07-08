@@ -3,6 +3,7 @@ const app = express();
 // const Joi = require('joi');
 const genres = require('./routes/genres');
 const home = require('./routes/home');
+const customer = require('./routes/customers');
 const { default: mongoose } = require('mongoose');
 require('dotenv').config();
 
@@ -16,6 +17,7 @@ mongoose
 app.use(express.json());
 app.use('/api/genres', genres);
 app.use('/', home);
+app.use('/api/customers', customer);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
