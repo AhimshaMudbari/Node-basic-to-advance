@@ -3,7 +3,9 @@ const app = express();
 // const Joi = require('joi');
 const genres = require('./routes/genres');
 const home = require('./routes/home');
+const rentals = require('./routes/rentals');
 const customer = require('./routes/customers');
+const movies = require('./routes/movies');
 const { default: mongoose } = require('mongoose');
 require('dotenv').config();
 
@@ -18,6 +20,8 @@ app.use(express.json());
 app.use('/api/genres', genres);
 app.use('/', home);
 app.use('/api/customers', customer);
+app.use('/api/rentals', rentals);
+app.use('/api/movies', movies);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
