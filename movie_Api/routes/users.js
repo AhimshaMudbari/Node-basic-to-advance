@@ -4,6 +4,11 @@ const _ = require('lodash');
 const bcrypt = require('bcrypt');
 const { User, validate } = require('../models/user');
 
+router.get('/individual', async (req, res) => {
+  const user = await User.findById(req.user._id).select('-password');
+  res.send(user);
+});
+
 router.post('/', async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -29,7 +34,7 @@ router.post('/', async (req, res) => {
   //     email: user.email,
   //   });
   const token = user.generateAuthToken();
-  res.header('X-auth-token', token).send(_.pick(user, ['name', 'email']));
+  res.header('x-auth-token', token).send(_.pick(user, ['name', 'email']));
 });
 
 module.exports = router;
