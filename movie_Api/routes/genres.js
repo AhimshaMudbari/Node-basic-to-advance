@@ -4,9 +4,13 @@ const auth = require('../middleware/auth');
 const router = express.Router();
 const { Genre, validate } = require('../models/genre');
 
-router.get('/', async (req, res) => {
-  const genre = await Genre.find().sort({ name: 1 });
-  res.send(genre);
+router.get('/', async (req, res, next) => {
+  try {
+    const genre = await Genre.find().sort({ name: 1 });
+    res.send(genre);
+  } catch (ex) {
+    next(ex);
+  }
 });
 
 router.get('/:id', async (req, res) => {
