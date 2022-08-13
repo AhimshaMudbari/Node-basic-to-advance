@@ -11,6 +11,7 @@ const authentication = require('./routes/authentication');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const { default: mongoose } = require('mongoose');
+const error = require('./middleware/error');
 require('dotenv').config();
 
 const con = process.env.MONGO_CON;
@@ -28,6 +29,8 @@ app.use('/api/rentals', rentals);
 app.use('/api/movies', movies);
 app.use('/api/users', users);
 app.use('/api/auth', authentication);
+
+app.use(error);
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`running on port ${port}`);
