@@ -9,6 +9,7 @@ const movies = require('./routes/movies');
 const users = require('./routes/users');
 const authentication = require('./routes/authentication');
 Joi.objectId = require('joi-objectid')(Joi);
+require('express-async-errors');
 
 const { default: mongoose } = require('mongoose');
 const error = require('./middleware/error');
