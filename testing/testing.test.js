@@ -65,19 +65,19 @@ describe('Oject Test', () => {
   });
 });
 
-// describe('Exception test', () => {
-//   it('Should throw error if no username is provided', () => {
-//     const arr = [null, NaN, '', undefined, 0, false];
-//     arr.forEach((element) => {
-//       expect(() => {
-//         expectionTest(element);
-//       }).toThrow();
-//     });
-//   });
+describe('Exception test', () => {
+  it('Should throw error if no username is provided', () => {
+    const arr = [null, NaN, '', undefined, 0, false];
+    arr.forEach((element) => {
+      expect(() => {
+        expectionTest(element);
+      }).toThrow();
+    });
+  });
 
-//   it('should register user if everything is valid', () => {
-//     const result = expectionTest('Ahim');
-//     expect(result).toMatchObject({ username: 'Ahim' });
-//     expect(result.id).toBeGreaterThan(0);
-//   });
-// });
+  it('should register user if everything is valid', () => {
+    const result = expectionTest('Ahim');
+    expect(result).toMatchObject({ username: 'Ahim' });
+    expect(result.id).toBeGreaterThan(0);
+  });
+});
