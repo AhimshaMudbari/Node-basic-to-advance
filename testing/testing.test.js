@@ -1,5 +1,5 @@
 const { expect, describe } = require('@jest/globals');
-const { PosNeg, str, arr, obj } = require('./number');
+const { PosNeg, str, arr, obj, expectionTest } = require('./number');
 
 describe('positive-negative-zero', () => {
   it('should return positive for positive', () => {
@@ -61,6 +61,23 @@ describe('Oject Test', () => {
       age: 27,
     });
 
-    expect(result).toHaveProperty('id', 32);
+    // expect(result).toHaveProperty('id', 27);
   });
 });
+
+// describe('Exception test', () => {
+//   it('Should throw error if no username is provided', () => {
+//     const arr = [null, NaN, '', undefined, 0, false];
+//     arr.forEach((element) => {
+//       expect(() => {
+//         expectionTest(element);
+//       }).toThrow();
+//     });
+//   });
+
+//   it('should register user if everything is valid', () => {
+//     const result = expectionTest('Ahim');
+//     expect(result).toMatchObject({ username: 'Ahim' });
+//     expect(result.id).toBeGreaterThan(0);
+//   });
+// });
