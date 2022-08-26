@@ -6,15 +6,14 @@ function reminderSync(id) {
     message: ' unset',
     alarm: function () {
       if (this.reminder == true) {
-        return (this.message = 'set');
+        return { message: 'set' };
       }
     },
   };
 }
 
-function send(date, message) {
+module.exports.s = function (date, message) {
   console.log('sending function');
-}
+};
 
 module.exports.reminderSync = reminderSync;
-module.exports.send = send;
