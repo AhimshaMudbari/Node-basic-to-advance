@@ -1,10 +1,11 @@
-const { reminderSync, send } = require('./reminder');
+const { reminderSync } = require('./reminder');
+const send = require('./reminder');
 
 function setReminder(value) {
   const reminderFunction = reminderSync(value.id);
   if (reminderFunction.reminder == true) {
-    console.log(reminderFunction.message);
-    send(reminderFunction.date, 'message');
+    console.log(reminderFunction.alarm());
+    send.s(reminderFunction.date, 'message');
   }
 }
 
